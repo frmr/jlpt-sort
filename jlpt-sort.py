@@ -170,7 +170,7 @@ def WriteHtml(kanjiDict, kanaList, miscList, vocabList, filename):
 
         htmlFile.write("<html>")
 
-        htmlFile.write("<head><link rel='stylesheet' href='jlpt.css'></head>")
+        htmlFile.write("<head><link rel='stylesheet' href='jlpt-sort.css'></head>")
 
         htmlFile.write("<body>")
         
@@ -209,7 +209,7 @@ def Main():
                 if not vocab.ContainsUnknownChar(kanaList, miscList, kanjiDict):
                         vocab.GivePointsToKanji(kanjiDict)
 
-        WriteHtml(kanjiDict, kanaList, miscList, vocabList, "jlpt.html")
+        WriteHtml(kanjiDict, kanaList, miscList, vocabList, "jlpt-sort.html")
 
         print "Done"
 
