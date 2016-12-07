@@ -159,6 +159,12 @@ def WriteVocabToHtmlFile(htmlFile, vocab, kanjiDict, kanaList, miscList):
 
         htmlFile.write("</div>")
 
+def WriteVocabListToHtmlFile(htmlFile, vocabList, kanjiDict, kanaList, miscList):
+        for level in range(5, 1, -1):
+                for vocab in vocabList:
+                        if vocab.level == level:
+                                WriteVocabToHtmlFile(htmlFile, vocab, kanjiDict, kanaList, miscList)
+
 def WriteHtml(kanjiDict, kanaList, miscList, vocabList, filename):        
         htmlFile = codecs.open(filename, "w", "utf-8")
 
@@ -169,26 +175,19 @@ def WriteHtml(kanjiDict, kanaList, miscList, vocabList, filename):
         htmlFile.write("<body>")
         
         for kanji in GetSortedKanji(kanjiDict):
-                perfectVocab = []
-                imperfectVocab = []
-                
+
+                thisKanjiVocab = []
                 for vocab in vocabList:
-                        if kanji in vocab.textKanji:                                
-                                if vocab.hasUnknownChars:
-                                        imperfectVocab.append(vocab)
-                                else:
-                                        perfectVocab.append(vocab)
+                        if kanji in vocab.textKanji:
+                                thisKanjiVocab.append(vocab)
 
                 htmlFile.write("<div class='section'>")
                 
                 htmlFile.write("<div class='title'>" + "<a href='http://jisho.org/search/" + kanji + "%23kanji" + "' name='" + kanji + "'>" + kanji + "</a>" + "</div>")
                 
                 htmlFile.write("<div class='vocab-block'>")
-                for vocab in perfectVocab:
-                        WriteVocabToHtmlFile(htmlFile, vocab, kanjiDict, kanaList, miscList)
 
-                for vocab in imperfectVocab:
-                        WriteVocabToHtmlFile(htmlFile, vocab, kanjiDict, kanaList, miscList)
+                WriteVocabListToHtmlFile(htmlFile, thisKanjiVocab, kanjiDict, kanaList, miscList)
 
                 htmlFile.write("</div>")
 
