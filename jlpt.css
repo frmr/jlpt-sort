@@ -1,0 +1,51 @@
+a
+{
+	color: black;
+	text-decoration: none;
+}
+
+
+
+.title
+{
+	font-size: 1.5em;
+	clear: both;
+}
+
+.vocab-block
+{
+	margin-left: 1em;
+	margin-bottom: 1em;
+	overflow: visible;
+}
+
+.vocab-entry
+{
+	clear: both;
+}
+
+.vocab-entry_kanji
+{
+	width: 5em;
+	float: left;
+	overflow: hidden;
+	margin-right: 0.5em;
+}
+
+.vocab-entry_kana
+{
+	width: 10em;
+	float: left;
+	overflow: hidden;
+	margin-right: 0.5em;
+}
+
+.vocab-entry_meaning
+{
+	overflow: visible;
+}
+
+.unknown-char
+{
+	color: #AAA;
+}
