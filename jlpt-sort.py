@@ -94,6 +94,7 @@ def LoadKanji():
         kanjiDict = LoadKanjiFile("kanji/n5.csv", 5)
         kanjiDict.update(LoadKanjiFile("kanji/n4.csv", 4))
         kanjiDict.update(LoadKanjiFile("kanji/n3.csv", 3))
+        kanjiDict.update(LoadKanjiFile("kanji/n2.csv", 2))
         return kanjiDict
 
 def LoadMisc():
@@ -104,6 +105,7 @@ def LoadVocab():
         vocabList = LoadVocabFile("vocab/n5.csv", 5)
         vocabList += LoadVocabFile("vocab/n4.csv", 4)
         vocabList += LoadVocabFile("vocab/n3.csv", 3)
+        vocabList += LoadVocabFile("vocab/n2.csv", 2)
         return vocabList
 
 def GetSortedKanji(kanjiDict):
