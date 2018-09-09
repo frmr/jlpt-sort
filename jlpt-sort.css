@@ -42,6 +42,8 @@ a
 
 .vocab-entry_meaning
 {
+	width: 20em;
+	float: left;
 	overflow: visible;
 }
 
